@@ -1,4 +1,4 @@
-# Sparkify song play logs ETL process
+# Sparkify songplay logs ETL process
 
 This project extract, transform and loads 5 main informations (tables) from the Sparkify app (an app to listen to your favorite musics) logs:
  - `users`
@@ -9,11 +9,9 @@ This project extract, transform and loads 5 main informations (tables) from the 
 
 With this structured database we can extract several insightful informations from the way our users listens to their musics. Learning from its habits through hidden patterns inside this large quantity of data. 
 
-Right down below you can read some instructions on how to create this database and then how to understand how this database was structured.
-
 ## Running the ETL
 
-First you should create the PostgreSQL database structure, by doing:
+First I create the PostgreSQL database structure, by doing:
 
 ```
 python create_tables.py
@@ -27,9 +25,7 @@ python etl.py
 
 ## Database Schema Design
 
-To learn how/why this schema design was made in this way, you should read our docs below: 
-
-### Song Plays table
+## Song Plays table
 
 - *Name:* `songplays`
 - *Type:* Fact table
@@ -102,11 +98,8 @@ To learn how/why this schema design was made in this way, you should read our do
 | `year` | `NUMERIC NOT NULL` | The year from the timestamp |
 | `weekday` | `NUMERIC NOT NULL` | The week day from the timestamp |
 
-## The project file structure
-
-We have a small list of files, easy to maintain and understand:
- - `sql_queries.py` - Where it all begins, this files is meant to be a query repository to use throughout the ETL process
- - `create_tables.py` - It's the file reponsible to create the schema structure into the PostgreSQL database
- - `etl.py` - It's the file responsible for the main ETL process
+## File information:
+ - `sql_queries.py` - a query repository to use throughout the ETL process
+ - `create_tables.py` - a query to create the schema structure of PostgreSQL database
+ - `etl.py` - main ETL code
  - `etl.ipynb` - The python notebook that was written to develop the logic behind the `etl.py` process
- - `test.ipynb` - And finally this notebook was used to certify if our ETL process was being successful (or not).
